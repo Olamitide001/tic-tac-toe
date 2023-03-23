@@ -1,0 +1,151 @@
+*{
+    /* background: url(./img0.jpg) no-repeat; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(237, 206, 166);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* margin-left: -100px; */
+}
+.gameboard{
+    display: grid;
+    width: 233px;
+    height: 233px;
+    background-color: azure;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    transform: perspective(-20deg);
+    z-index: 2;
+}
+.gameboard div{
+    background-color: rgb(235, 162, 162);
+    border-bottom: 2px solid rgb(166, 95, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    border: 2px solid rgb(166, 95, 232);
+}
+/* .gameboard div:nth-child(3){
+    border-right: none;
+}
+.gameboard div:nth-child(6){
+    border-right: none;
+}
+.gameboard div:nth-child(9){
+    border-right: none;
+    border-bottom: none;
+}
+.gameboard div:nth-child(8){
+    border-bottom: none;
+}
+.gameboard div:nth-child(7){
+    border-bottom: none;
+} */
+.avater--0{
+    color: blue;
+}
+.container div:hover{
+    background-color: rgb(172, 213, 248);
+}
+.container div:active{
+    background-color: beige;
+}
+form{
+    position: relative;
+    left: 66px;
+    top: 10px;
+}
+.new-game{
+    background-color: steelblue;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 0 2px white;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+.new-game:hover{
+    background-color: azure;
+    color: black;
+}
+section{
+    width: 233px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 10px;
+}
+h1{
+    border: 2px solid grey;
+    background-color: steelblue;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    text-align: center;
+    border: 2px solid gray;
+    width: 50px;
+    margin: auto;
+    color: red;
+    background-color: white;
+}
+.player-active{
+    background-color: blueviolet;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 10px solid red;
+    box-sizing: border-box;
+}
+.cross{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform: rotate(45deg);
+}
+.cross::before, .cross:after{
+    content: "";
+    position: absolute;
+    background-color:  blue;
+}
+.cross::before{
+    left:50% ;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+.cross::after{
+    top:50%;
+    margin-top: -15%;
+    height: 30%;
+    width: 100%;
+}
+.winner-img{
+    position: absolute;
+    top: 240px;
+    left: 565px;
+    width: 150px;
+    height: 150px;
+    background: url(./img1.jpg) no-repeat;
+    animation: animate 5s ease-in-out infinite;
+    z-index: 4;
+}
+
+@keyframes animate{
+    100%{
+        transform: rotateY(1turn);
+    }
+}
